@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "74241467943",
+    "project_id": "bultfarm-92992",
+    "storage_bucket": "bultfarm-92992.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74241467943:android:5599d4419320d21c791002",
+        "android_client_info": {
+          "package_name": "com.aquaponics.bulty_farmm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWYhf4Kc_HuDu-eeSf6qNoSlf_1M7yV3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
