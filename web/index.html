@@ -23,13 +23,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="bulty_farmm_test_test_test">
+  <meta name="apple-mobile-web-app-title" content="bulty_farmm">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="assets/images/img_7.png" href="favicon.png"/>
 
-  <title>bulty_farmm_test_test_test</title>
+  <title>bulty_farm</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -55,5 +55,22 @@
       });
     });
   </script>
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "firebase/app";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyC7UcBVTtQ1OSaSjoVMM8PAJQWUXIoJoY8",
+  authDomain: "bultfarm-92992.firebaseapp.com",
+  projectId: "bultfarm-92992",
+  storageBucket: "bultfarm-92992.appspot.com",
+  messagingSenderId: "74241467943",
+  appId: "1:74241467943:web:4548c42ca9726962791002"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 </body>
 </html>

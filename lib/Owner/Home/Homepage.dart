@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bulty_farmm/Owner/Sensors/SensorCard.dart';
-
 import 'package:bulty_farmm/ProfileSettings/profileScreen.dart';
 import 'package:animate_do/animate_do.dart';
-
 
 class SensorData {
   final String title;
@@ -18,6 +16,7 @@ class SensorData {
     required this.fontFamily,
   });
 }
+
 Future<void> _refreshData() async {
   // Add your data fetching logic here
   // For example:
@@ -26,15 +25,13 @@ Future<void> _refreshData() async {
   // });
 }
 
-
 class HomePage extends StatefulWidget {
   static String routeName = "/home";
 
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
-
 }
 
 class _HomePageState extends State<HomePage> {
@@ -87,59 +84,54 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
       body: SafeArea(
-      child: RefreshIndicator(
-    onRefresh: _refreshData,
-        child: SingleChildScrollView(
-    physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Sensor Data',
-                      style: TextStyle(fontSize: 24.0, fontFamily: 'TT Firs Neue'),
+        child: RefreshIndicator(
+          onRefresh: _refreshData,
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Sensor Data',
+                    style: TextStyle(fontSize: 24.0, fontFamily: 'TT Firs Neue'),
+                  ),
+                  const SizedBox(height: 20.0),
+                  GridView.builder(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200,
+                      mainAxisSpacing: _spacing,
+                      crossAxisSpacing: _spacing,
+                      childAspectRatio: (_getItemWidth(context) / (_getItemWidth(context) + 60)),
                     ),
-                    const SizedBox(height: 20.0),
-                    GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: _crossAxisCount,
-                        mainAxisSpacing: _spacing,
-                        crossAxisSpacing: _spacing,
-                        childAspectRatio: (_getItemWidth(context) / (_getItemWidth(context) + 60)),
-                      ),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: sensorData.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-
-                          },
-                          child: FadeInUp(
-                            duration: const Duration(milliseconds: 500),
-                            child: SensorCard(
-                              title: sensorData[index].title,
-                              value: sensorData[index].value,
-                              icon: sensorData[index].icon,
-                              fontFamily: sensorData[index].fontFamily,
-                              sensorData: sensorData, // Passing sensorData list
-                            ),
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: sensorData.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          // Handle tap on sensor card
+                        },
+                        child: FadeInUp(
+                          duration: const Duration(milliseconds: 500),
+                          child: SensorCard(
+                            title: sensorData[index].title,
+                            value: sensorData[index].value,
+                            icon: sensorData[index].icon,
+                            fontFamily: sensorData[index].fontFamily,
+                            sensorData: sensorData,
                           ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
-      ),
       ),
     );
   }

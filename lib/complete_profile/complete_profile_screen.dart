@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
 import 'components/complete_profile_form.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
   static String routeName = "/complete_profile";
 
-  const CompleteProfileScreen({super.key});
+  CompleteProfileScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final TextStyle headingStyle = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 24,
+      color: Colors.black,
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sign Up'),
@@ -22,18 +28,18 @@ class CompleteProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  const Text("Complete Profile", style: headingStyle),
+                  Text("Complete Profile", style: headingStyle),
                   const Text(
-                    "Complete your details or continue  \nwith social media",
+                    "Complete your details or continue\nwith social media",
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
                   const CompleteProfileForm(),
                   const SizedBox(height: 30),
                   Text(
-                    "By continuing your confirm that you agree \nwith our Term and Condition",
+                    "By continuing, you confirm that you agree\nwith our Terms and Conditions",
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ],
               ),

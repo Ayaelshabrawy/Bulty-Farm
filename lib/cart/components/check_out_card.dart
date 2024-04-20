@@ -53,7 +53,7 @@ class CheckoutCard extends StatelessWidget {
                 const Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
-                  color: kTextColor,
+                  color: Colors.white,
                 )
               ],
             ),

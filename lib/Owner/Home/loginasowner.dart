@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:bulty_farmm/Owner/Home/Homepage.dart';
 import 'package:bulty_farmm/Owner/Home/signupasowner.dart';
-import 'package:bulty_farmm/forgetpassword/components/forgetpassword.dart';
+import 'package:bulty_farmm/Owner/components/forgot_password_screen_owner.dart';
+import 'dart:core';
+import 'package:email_validator/email_validator.dart';
 
 class LoginasownerPage extends StatefulWidget {
   const LoginasownerPage({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class _LoginasownerPageState extends State<LoginasownerPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); // Define the GlobalKey
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void _login(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
@@ -25,12 +27,12 @@ class _LoginasownerPageState extends State<LoginasownerPage> {
       String password = _passwordController.text;
 
       try {
-        final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailAddress,
           password: password,
         );
 
-        if (credential.user != null) {
+        if (userCredential.user != null) {
           // Login successful, navigate to home page or another destination
           Navigator.pushReplacement(
             context,
@@ -165,7 +167,7 @@ class _LoginasownerPageState extends State<LoginasownerPage> {
                                   child: SlideInLeft(
                                     duration: const Duration(milliseconds: 500),
                                     child: Form(
-                                      key: _formKey, // Assign the GlobalKey to the Form widget
+                                      key: _formKey,
                                       child: TextFormField(
                                         controller: _usernameController,
                                         keyboardType: TextInputType.text,
@@ -175,8 +177,8 @@ class _LoginasownerPageState extends State<LoginasownerPage> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 12,
                                           ),
-                                          prefixIcon: Icon(Icons.email), // Add user icon
-                                          border: UnderlineInputBorder(), // Use UnderlineInputBorder for line border
+                                          prefixIcon: Icon(Icons.email),
+                                          border: UnderlineInputBorder(),
                                         ),
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
@@ -200,9 +202,8 @@ class _LoginasownerPageState extends State<LoginasownerPage> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 12,
                                       ),
-                                      prefixIcon: const Icon(Icons.lock), // Add lock icon
-                                      border: const UnderlineInputBorder(), // Use UnderlineInputBorder for line border
-                                      // Add suffix icon to toggle password visibility
+                                      prefixIcon: const Icon(Icons.lock),
+                                      border: const UnderlineInputBorder(),
                                       suffixIcon: IconButton(
                                         icon: Icon(
                                           _isPasswordVisible ? Icons.visibility : Icons.visibility_off,

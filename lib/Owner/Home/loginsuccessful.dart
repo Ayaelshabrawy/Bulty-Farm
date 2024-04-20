@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bulty_farmm/Owner/Home/Homepage.dart';
-import 'package:animate_do/animate_do.dart'; // Import the correct package for animations
+import 'package:animate_do/animate_do.dart';
+// Import the correct package for animations
 
 class LoginSuccessScreen extends StatelessWidget {
   static String routeName = "/login_success";

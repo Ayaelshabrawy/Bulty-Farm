@@ -23,6 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  flutter_bloc: ^8.1.5
   quickalert: ^1.1.0
   flutter_svg: ^2.0.10+1
   animate_do: ^3.0.0
@@ -31,8 +32,18 @@ dependencies:
   firebase_core: ^2.29.0
   firebase_auth: ^4.19.1
   fl_chart: ^0.67.0
-  # url_launcher: any
+  firebase_database: ^10.5.2
+  cloud_firestore: ^4.17.0
+  email_validator: ^2.1.17
+  get: ^4.6.6
+  awesome_notifications: 0.7.7
+  iconsax_flutter: ^1.0.0
+
+  either_dart: ^0.4.0
+  firebase_messaging: ^14.8.2
   flutter_local_notifications: ^17.0.0
+  websafe_svg: ^3.0.1+1
+  flutter_staggered_grid_view: ^0.7.0
 
   # UIs
   modal_bottom_sheet:
@@ -42,6 +53,26 @@ dependencies:
   
   # Utilities
   url_launcher: ^6.2.6
+
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/images/img_7.png"
+    min_sdk_android: 21 # android min sdk min:16, default 21
+    web:
+      generate: true
+      image_path: "assets/images/img_7.png"
+      background_color: "#hexcode"
+      theme_color: "#hexcode"
+    windows:
+      generate: true
+      image_path: "assets/images/img_7.png"
+      icon_size: 48 # min:48, max:256, default: 48
+    macos:
+      generate: true
+      image_path: "assets/images/img_7.png"
 
 dev_dependencies:
   flutter_test:

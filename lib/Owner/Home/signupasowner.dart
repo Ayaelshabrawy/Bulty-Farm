@@ -316,6 +316,87 @@ class _SignupasownerPageState extends State<SignupasownerPage> {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: 50),
+                                  SizedBox(height: 10),
+                                  SlideInLeft(
+                                    duration: Duration(milliseconds: 500),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Check if all fields are filled
+                                        if (_nameController.text.isEmpty ||
+                                            _mobileController.text.isEmpty ||
+                                            _emailController.text.isEmpty ||
+                                            _passwordController.text.isEmpty ||
+                                            _fixedIDController.text.isEmpty) {
+                                          // Show an error message if any field is empty
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) => AlertDialog(
+                                              title: Text('Error'),
+                                              content: Text('Please fill in all required fields.'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text('OK'),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        } else {
+                                          // Proceed with sign-up process
+                                          // Check if the Fixed ID matches the specified value
+                                          if (_fixedIDController.text == 'Ay20122000') {
+                                            // If the Fixed ID matches, navigate to the success page
+                                            Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => LoginasownerPage(),
+                                              ),
+                                            );
+                                          } else {
+                                            // If the Fixed ID doesn't match, show an error message
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) => AlertDialog(
+                                                title: Text('Error'),
+                                                content: Text('Unique ID does not match. Please try again.'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text('OK'),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          }
+                                        }
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(80.0),
+                                        ),
+                                        padding: EdgeInsets.all(0),
+                                        // primary: Color(0xff0e1f37), // background color
+                                        // onPrimary: Colors.white, // foreground color
+                                      ),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        height: 50.0,
+                                        width: MediaQuery.of(context).size.width,
+                                        child: Text(
+                                          'SIGN UP',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                   const SizedBox(height: 50),
                                   SlideInLeft(
                                     duration: const Duration(milliseconds: 500),

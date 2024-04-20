@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'package:bulty_farmm/Customer/signupascustomer.dart';
 
+
 class NoAccountText extends StatelessWidget {
   const NoAccountText({
     super.key,
@@ -21,7 +22,7 @@ class NoAccountText extends StatelessWidget {
           onTap: () => Navigator.pushNamed(context, SignupascustomerPage.routeName),
           child: const Text(
             "Sign Up",
-            style: TextStyle(fontSize: 16, color: kPrimaryColor),
+            style: TextStyle(fontSize: 16, color: Color(0xff76984b)),
           ),
         ),
       ],

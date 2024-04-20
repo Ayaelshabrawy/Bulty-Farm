@@ -1,48 +1,40 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryLightColor = Color(0xFFFFECDF);
-const kPrimaryGradientColor = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
-);
-const kSecondaryColor = Color(0xFF979797);
-const kTextColor = Colors.black;
-
-const kAnimationDuration = Duration(milliseconds: 200);
-
-const headingStyle = TextStyle(
+const kPrimaryColor = Color(0xff76984b);
+const kBackgroundColor = Color(0xffececee);
+const kContentColor = Color(0xffffffff);
+const kSecondaryColor = Color(0xff101010);
+const kTextColor = Color(0xff101010);
+const kFontFamily = "Poppins";
+const TextStyle headingStyle = TextStyle(
   fontSize: 24,
   fontWeight: FontWeight.bold,
-  color: Colors.black,
-  height: 1.5,
+  // Add other style properties as needed
 );
 
-const defaultDuration = Duration(milliseconds: 250);
+const SizedBox sizedBoxHeight16 = SizedBox(height: 16);
+const String kEmailNullError = "Please enter your email";
+const String kInvalidEmailError = "Please enter a valid email address";
 
-// Form Error
-final RegExp emailValidatorRegExp =
-    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "Please Enter your email";
-const String kInvalidEmailError = "Please Enter Valid Email";
-const String kPassNullError = "Please Enter your password";
+const String kNameNullError = "Please enter your first name";
+const String kPhoneNumberNullError = "Please enter your phone number";
+const String kAddressNullError = "Please enter your address";
+
+const String kPassNullError = "Please enter your password";
 const String kShortPassError = "Password is too short";
 const String kMatchPassError = "Passwords don't match";
-const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your phone number";
-const String kAddressNullError = "Please Enter your address";
-
-final otpInputDecoration = InputDecoration(
-  contentPadding: const EdgeInsets.symmetric(vertical: 16),
-  border: outlineInputBorder(),
-  focusedBorder: outlineInputBorder(),
-  enabledBorder: outlineInputBorder(),
+final RegExp emailValidatorRegExp = RegExp(
+  r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?\.[a-zA-Z]{2,63}$",
 );
 
-OutlineInputBorder outlineInputBorder() {
-  return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: kTextColor),
-  );
-}
+final OutlineInputBorder kOutlineInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: BorderSide(color: Colors.black),
+);
+
+final InputDecoration otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(vertical: 15),
+  border: kOutlineInputBorder,
+  focusedBorder: kOutlineInputBorder,
+  enabledBorder: kOutlineInputBorder,
+);

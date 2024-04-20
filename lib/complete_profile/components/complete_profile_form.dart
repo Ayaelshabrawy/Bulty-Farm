@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
-import '../../../constants.dart';
 
+// Define form validation error messages
+const String kNameNullError = "Please enter your first name";
+const String kPhoneNumberNullError = "Please enter your phone number";
+const String kAddressNullError = "Please enter your address";
 
 class CompleteProfileForm extends StatefulWidget {
-  const CompleteProfileForm({super.key});
+  const CompleteProfileForm({Key? key}) : super(key: key);
 
   @override
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
@@ -46,13 +48,13 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             onSaved: (newValue) => firstName = newValue,
             onChanged: (value) {
               if (value.isNotEmpty) {
-                removeError(error: kNamelNullError);
+                removeError(error: kNameNullError);
               }
               return;
             },
             validator: (value) {
               if (value!.isEmpty) {
-                addError(error: kNamelNullError);
+                addError(error: kNameNullError);
                 return "";
               }
               return null;
@@ -60,8 +62,6 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             decoration: const InputDecoration(
               labelText: "First Name",
               hintText: "Enter your first name",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
             ),
@@ -72,8 +72,6 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             decoration: const InputDecoration(
               labelText: "Last Name",
               hintText: "Enter your last name",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
             ),
@@ -98,8 +96,6 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             decoration: const InputDecoration(
               labelText: "Phone Number",
               hintText: "Enter your phone number",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
             ),
@@ -123,11 +119,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             decoration: const InputDecoration(
               labelText: "Address",
               hintText: "Enter your address",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon:
-                  CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
+              suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
             ),
           ),
           FormError(errors: errors),
@@ -135,7 +128,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, OtpScreen.routeName);
+                // Form is valid, continue with your logic
               }
             },
             child: const Text("Continue"),
