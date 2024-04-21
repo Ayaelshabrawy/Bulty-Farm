@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:bulty_farmm/constants.dart';
-import 'package:bulty_farmm/models/plant.dart';
+import 'package:bulty_farmm/models/plant-fish.dart';
 import 'package:bulty_farmm/widgets/plant_card.dart';
 import 'package:bulty_farmm/ProfileSettings/profileScreen.dart';
+import 'package:bulty_farmm/cart/cart_screen.dart';
 class  PlantFishMarket extends StatefulWidget {
   const PlantFishMarket({super.key});
 
@@ -19,41 +20,57 @@ class _PlantFishMarketState extends State< PlantFishMarket> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xffececee),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(CupertinoIcons.chevron_back),
-        ),
+
+
         centerTitle: true,
         title: Text(
           "Bulty Market",
           style: TextStyle(
-            color: Colors.grey.shade800,
-            fontSize: 16,
+            color: Colors.black,
+            fontSize: 18,
               fontFamily: 'TT Firs Neue'
           ),
         ),
-        actions: [
-          IconButton(
-            icon: Image.asset(
-              'assets/images/avatar.png',
-              height: 45,
-              color: Colors.grey[800],
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
-            },
-          ),
-        ],
       ),
+      bottomNavigationBar: BottomAppBar(
+      color: Colors.grey,
+      shape: CircularNotchedRectangle(),
+      child: Container(
+        height: 80,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CartScreen()),
+                  );
+                },
+                icon: Icon(CupertinoIcons.cart),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                  );
+                },
+                icon: Image.asset('assets/images/avatar.png'), // Replace 'assets/images/avatar.png' with your actual image path
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     flex: 5,
@@ -104,14 +121,7 @@ class _PlantFishMarketState extends State< PlantFishMarket> {
                 crossAxisCount: 2,
               ),
               children: [
-                const Text(
-                  "Found 10 Results",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                      fontFamily: 'TT Firs Neue'
-                  ),
-                ),
+
                 for (var plant in plants) PlantCard(plant: plant),
               ],
             ),

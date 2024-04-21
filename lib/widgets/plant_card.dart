@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import 'package:bulty_farmm/models/plant.dart';
+import 'package:bulty_farmm/models/plant-fish.dart';
 
 class PlantCard extends StatelessWidget {
   const PlantCard({

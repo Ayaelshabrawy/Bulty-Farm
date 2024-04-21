@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:bulty_farmm/constants.dart';
+import '../../../constants.dart';
 import '../../../models/Cart.dart';
 
 class CartCard extends StatelessWidget {
   const CartCard({
-    super.key,
+    Key? key,
     required this.cart,
-  });
+  }) : super(key: key);
 
   final Cart cart;
 
@@ -43,7 +43,7 @@ class CartCard extends StatelessWidget {
               TextSpan(
                 text: "\$${cart.product.price}",
                 style: const TextStyle(
-                    fontWeight: FontWeight.w600, color: Color(0xff76984b)),
+                    fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
                       text: " x${cart.numOfItem}",
