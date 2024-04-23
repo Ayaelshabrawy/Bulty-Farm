@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:bulty_farmm/screens/forgot_password_customer/forgot_password_screen.dart';
-import 'package:bulty_farmm/Customer/customer_market/market_crops.dart';
+import 'package:bulty_farmm/Customer/customer_market/onboarding_screen.dart';
 import 'package:bulty_farmm/Customer/signupascustomer.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';

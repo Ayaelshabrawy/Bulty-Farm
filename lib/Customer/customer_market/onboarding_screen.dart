@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bulty_farmm/constants.dart';
-import 'package:bulty_farmm/Customer/customer_market/market_crops.dart';
+
+import 'package:bulty_farmm/Customer/customer_market/bulty_market.dart';
 
 
 class OnBoardingScreen extends StatefulWidget {

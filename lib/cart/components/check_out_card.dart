@@ -5,8 +5,8 @@ import '../../../constants.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class CheckoutCard extends StatelessWidget {
                 const Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
-                  color: Colors.white,
+                  color: kTextColor,
                 )
               ],
             ),

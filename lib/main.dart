@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:bulty_farmm/splachscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
 
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
@@ -26,12 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashScreen(),
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      getPages: AppRoutes.pages,
-      initialRoute: AppRoutes.splashScreen,
+      home: SplashScreen (),
+
     );
   }
 }
