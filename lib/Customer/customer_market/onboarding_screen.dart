@@ -5,6 +5,7 @@ import 'package:bulty_farmm/Customer/customer_market/bulty_market.dart';
 
 
 class OnBoardingScreen extends StatefulWidget {
+
   const OnBoardingScreen({super.key});
 
   @override
@@ -45,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlantFishMarket(),
+                  builder: (context) => BultyMarket(),
                 ),
               );
             },
@@ -122,7 +123,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PlantFishMarket (),
+                        builder: (context) => BultyMarket (),
                       ),
                     );
                   } else {

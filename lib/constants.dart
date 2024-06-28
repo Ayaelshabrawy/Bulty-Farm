@@ -29,11 +29,11 @@ final RegExp emailValidatorRegExp = RegExp(
 
 final OutlineInputBorder kOutlineInputBorder = OutlineInputBorder(
   borderRadius: BorderRadius.circular(15),
-  borderSide: BorderSide(color: Colors.black),
+  borderSide: const BorderSide(color: Colors.black),
 );
 
 final InputDecoration otpInputDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: 15),
+  contentPadding: const EdgeInsets.symmetric(vertical: 15),
   border: kOutlineInputBorder,
   focusedBorder: kOutlineInputBorder,
   enabledBorder: kOutlineInputBorder,

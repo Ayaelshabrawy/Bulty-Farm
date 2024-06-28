@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../enums.dart';
+import '../../../utils/logger.dart';
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -12,17 +13,24 @@ class LoginController extends GetxController {
   final _authRepo = AUthenticationRepository.instance;
 
   // Text editing controllers
+  final TextEditingController username = TextEditingController();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
 
   // variables
-  bool _isPasswordVisible = false;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final isPasswordVisible = false.obs;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  void togglePasswordVisibility() {
+    isPasswordVisible.toggle();
+  }
 
   void login() async {
-    if (_formKey.currentState?.validate() ?? false) {
+    Logger.debugPrint('Login called');
+    if (formKey.currentState?.validate() ?? false) {
       // call our function to deal with the login
-     final u = await _authRepo
+      debugPrint(email.text);
+      final u = await _authRepo
           .loginWithEmailAndPassword(
         email: email.text,
         password: password.text,
@@ -33,18 +41,12 @@ class LoginController extends GetxController {
           '$error',
           backgroundColor: Colors.redAccent,
         );
-        return false;
       });
 
       // u if login is sucess
       // prepareUserFirstLoginDocument()
-
-     
     }
   }
-
-
-  
 
   @override
   void dispose() {

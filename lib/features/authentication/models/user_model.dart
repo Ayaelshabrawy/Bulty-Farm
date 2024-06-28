@@ -1,13 +1,15 @@
 
+import 'package:bulty_farmm/enums.dart';
+
 class UserModel {
   final String uid;
   final String name;
   final String email;
-  final String photoUrl;
+  final String? photoUrl;
   final String role;
   final List<String>? favorite;
   final List<String>? cart;
-  final String address;
+  final String? address;
   final String phone;
 
 
@@ -15,11 +17,11 @@ class UserModel {
     required this.uid,
     required this.name,
     required this.email,
-    required this.photoUrl,
-    required this.role,
+    this.photoUrl,
+    this.role = 'customer',
     this.favorite,
     this.cart,
-    required this.address,
+    this.address,
     required this.phone,
   });
 

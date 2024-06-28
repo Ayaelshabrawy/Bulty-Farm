@@ -1,6 +1,10 @@
+import 'package:bulty_farmm/config/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:bulty_farmm/Owner/components/forgot_pass_form.dart';
-import 'package:bulty_farmm/Customer/signupascustomer.dart';
+import 'package:bulty_farmm/screens/forgot_password_customer/components/forgot_pass_form.dart';
+import 'package:bulty_farmm/features/authentication/views/signup/signup_view.dart';
+import 'package:get/get.dart';
+
+import '../../repositories/authentication_repository.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   static String routeName = "/forgot_password";
@@ -38,10 +42,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 SizedBox(height: 16), // Adding some space between the form and button
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SignupascustomerPage()),
-                    );
+                    Get.toNamed(AppRoutes.signUp);
                   },
                   child: Text(
                     "Sign Up",

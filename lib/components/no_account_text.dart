@@ -1,7 +1,7 @@
+import 'package:bulty_farmm/config/routes.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import 'package:bulty_farmm/Customer/signupascustomer.dart';
+
 
 
 class NoAccountText extends StatelessWidget {
@@ -19,7 +19,7 @@ class NoAccountText extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         GestureDetector(
-          onTap: () => Navigator.pushNamed(context, SignupascustomerPage.routeName),
+          onTap: () => Navigator.pushNamed(context, AppRoutes.signUp),
           child: const Text(
             "Sign Up",
             style: TextStyle(fontSize: 16, color: Color(0xff76984b)),

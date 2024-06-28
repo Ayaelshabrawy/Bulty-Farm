@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:bulty_farmm/Owner/Sensors/SensorCard.dart';
 import 'package:bulty_farmm/ProfileSettings/profileScreen.dart';
@@ -36,11 +37,31 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<SensorData> sensorData = [
-    SensorData(title: 'Temperature', value: '25°C', fontFamily: 'TT Firs Neue', icon: Icons.thermostat),
-    SensorData(title: 'PH Level', value: '7.0', fontFamily: 'TT Firs Neue', icon: Icons.waves),
-    SensorData(title: 'Fish Diseases', value: 'Healthy', fontFamily: 'TT Firs Neue', icon: Icons.healing),
-    SensorData(title: 'Water Level', value: 'Normal', fontFamily: 'TT Firs Neue', icon: Icons.opacity),
-    SensorData(title: 'Biomass', value: '1000 kg', fontFamily: 'TT Firs Neue', icon: Icons.group),
+    SensorData(
+        title: 'Temperature',
+        value: '25°C',
+        fontFamily: 'TT Firs Neue',
+        icon: Icons.thermostat),
+    SensorData(
+        title: 'PH Level',
+        value: '7.0',
+        fontFamily: 'TT Firs Neue',
+        icon: Icons.waves),
+    SensorData(
+        title: 'Fish Diseases',
+        value: 'Healthy',
+        fontFamily: 'TT Firs Neue',
+        icon: Icons.healing),
+    SensorData(
+        title: 'Water Level',
+        value: 'Normal',
+        fontFamily: 'TT Firs Neue',
+        icon: Icons.opacity),
+    SensorData(
+        title: 'Biomass',
+        value: '1000 kg',
+        fontFamily: 'TT Firs Neue',
+        icon: Icons.group),
   ];
 
   final double _spacing = 10.0;
@@ -48,7 +69,8 @@ class _HomePageState extends State<HomePage> {
 
   double _getItemWidth(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final itemWidth = (screenWidth - ((_crossAxisCount - 1) * _spacing)) / _crossAxisCount;
+    final itemWidth =
+        (screenWidth - ((_crossAxisCount - 1) * _spacing)) / _crossAxisCount;
     return itemWidth;
   }
 
@@ -61,6 +83,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+        // test
+
         actions: [
           IconButton(
             icon: Image.asset(
@@ -77,12 +101,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _addSensorDialog(context);
-        },
-        child: const Icon(Icons.add),
-      ),
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _refreshData,
@@ -96,7 +114,8 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 20),
                   const Text(
                     'Sensor Data',
-                    style: TextStyle(fontSize: 24.0, fontFamily: 'TT Firs Neue'),
+                    style:
+                        TextStyle(fontSize: 24.0, fontFamily: 'TT Firs Neue'),
                   ),
                   const SizedBox(height: 20.0),
                   GridView.builder(
@@ -104,7 +123,8 @@ class _HomePageState extends State<HomePage> {
                       maxCrossAxisExtent: 200,
                       mainAxisSpacing: _spacing,
                       crossAxisSpacing: _spacing,
-                      childAspectRatio: (_getItemWidth(context) / (_getItemWidth(context) + 60)),
+                      childAspectRatio: (_getItemWidth(context) /
+                          (_getItemWidth(context) + 60)),
                     ),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),

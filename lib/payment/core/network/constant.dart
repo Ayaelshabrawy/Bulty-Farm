@@ -1,0 +1,6 @@
+class ApiContest {
+
+  static const String paymentApiKey = 'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1Rjek5qRTBMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkud1lyRC1oemI1WDJUa0V2QjF4YUxydWNqS1hPMkdSVmZQcmRRZmlCclZUOVh0ajI1N1lMMEdRNTFPVF8yaTV2Q2luSUtxVzRzeU1yRjQ5WG0ybUZMUUE=';
+
+}
+

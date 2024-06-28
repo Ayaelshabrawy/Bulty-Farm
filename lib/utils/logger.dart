@@ -1,10 +1,3 @@
-/* 
-  For useful debugging the [Logger was invented]
-  
-
-  @author -> Amgad Fahd 
-
-*/
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';

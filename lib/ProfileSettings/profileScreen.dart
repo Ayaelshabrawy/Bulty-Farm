@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bulty_farmm/Owner/Home/loginasowner.dart';
+import 'package:bulty_farmm/repositories/authentication_repository.dart';
 import 'package:bulty_farmm/ProfileSettings/profile_menu.dart';
 import 'package:bulty_farmm/ProfileSettings/profile_pic.dart';
 import 'package:bulty_farmm/ProfileSettings/HelpCenter.dart';
@@ -68,10 +68,7 @@ class ProfileScreen extends StatelessWidget {
               text: "Log Out",
               icon: Icons.logout_outlined,
               press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginasownerPage ()),
-                );
+                AUthenticationRepository.instance.signOut();
               },
             ),
           ],

@@ -1,4 +1,4 @@
 enum MenuState { home, favourite, message, profile }
 
 
-enum UserRole { owner, customer}
+enum UserRole { owner, customer, unknown}

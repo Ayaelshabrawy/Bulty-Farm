@@ -1,7 +1,9 @@
+import 'package:bulty_farmm/config/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:bulty_farmm/Customer/loginascustomer.dart';
 import 'package:bulty_farmm/Owner/Home/loginasowner.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:get/get.dart';
 
 class UsertypePainter extends CustomPainter {
   @override
@@ -129,10 +131,7 @@ class _UsertypeState extends State<Usertype> with SingleTickerProviderStateMixin
                     duration: const Duration(milliseconds: 1000),
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const LoginasownerPage()),
-                        );
+                        Get.toNamed(AppRoutes.login);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff0d1f36),

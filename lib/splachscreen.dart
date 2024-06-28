@@ -1,7 +1,6 @@
-import 'dart:async'; // Added to handle asynchronous operations
+// Added to handle asynchronous operations
 
 import 'package:flutter/material.dart';
-import 'package:bulty_farmm/ownerorcustomer.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,12 +30,12 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     // Navigate to the LoginSignupPage after a delay
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const Usertype()),
-      );
-    });
+    // Timer(const Duration(seconds: 3), () {
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => const AuthenticationView()),
+    //   );
+    // });
   }
 
   @override
